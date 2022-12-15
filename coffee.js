@@ -1,13 +1,16 @@
 import express from "express";
 import postgres from "postgres";
-console.log(process.env.DATABASE_URL)
+import dotenv from "dotenv";
+
+dotenv.config()
+
 const sql = postgres(process.env.DATABASE_URL);
 
 const app = express();
 
 app.use(express.json())
 app.use(express.static("./client"));
-console.log("hello")
+
 
 app.get("/api/coffee", (req, res) => {
     sql`SELECT * FROM coffee`.then((result) => {
