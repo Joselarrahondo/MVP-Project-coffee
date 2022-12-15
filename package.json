@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "npx nodemon server.js"
+    "start": "node coffee.js",
+    "dev": "npx nodemon coffee.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

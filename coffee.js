@@ -1,9 +1,8 @@
 import express from "express";
 import postgres from "postgres";
-import cors from "cors";
 
-const sql = postgres({database: "coffee_info"});
-process
+const sql = postgres("postgres://coffee_info_user:5wqDNKAPUIr5cqSDcFsNADAi3WXBV9hW@dpg-cedms0arrk08fodm5710-a.oregon-postgres.render.com/coffee_info?ssl=true");
+
 const app = express();
 
 app.use(express.json())
