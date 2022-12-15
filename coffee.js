@@ -1,13 +1,13 @@
 import express from "express";
 import postgres from "postgres";
-
-const sql = postgres("postgres://coffee_info_user:5wqDNKAPUIr5cqSDcFsNADAi3WXBV9hW@dpg-cedms0arrk08fodm5710-a.oregon-postgres.render.com/coffee_info?ssl=true");
+console.log(process.env.DATABASE_URL)
+const sql = postgres(process.env.DATABASE_URL);
 
 const app = express();
 
 app.use(express.json())
 app.use(express.static("./client"));
-
+console.log("hello")
 
 app.get("/api/coffee", (req, res) => {
     sql`SELECT * FROM coffee`.then((result) => {
@@ -74,8 +74,9 @@ app.delete("/api/coffee/:id", (req, res) => {
     })
 });
 
-app.use((req, res) => {
+app.use((err, req, res, next) => {
     res.status(500);
+    console.log(err)
     res.send("Internal Server Error");
 })
 
