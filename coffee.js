@@ -9,6 +9,7 @@ const sql = postgres(process.env.DATABASE_URL);
 const app = express();
 
 app.use(express.json())
+
 app.use(express.static("./client"));
 
 
