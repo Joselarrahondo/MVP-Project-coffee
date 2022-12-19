@@ -9,30 +9,35 @@ coffeeList.addEventListener("submit", (event) => {
     .then((res) => res.json())
     .then((coffies) => {
       for (let coffee of coffies) {
-        if (formdata.get("caffein").toLocaleLowerCase() === coffee.caffein.toLocaleLowerCase()){
+        //where i make a div i need to give it a class 
+        //in CSS use class slecector to style 
+        if (
+          formdata.get("caffein").toLocaleLowerCase() ===
+          coffee.caffein.toLocaleLowerCase()
+        ) {
           const div = document.createElement("div");
+          div.className="coffeeList"
           div.textContent = `${coffee.name}:${coffee.caffein}: ${coffee.flavor}`;
           coffeeType.append(div);
-        }
-
-        if (formdata.get("name").toLocaleLowerCase() === coffee.name.toLocaleLowerCase()) {
+        } else if (
+          formdata.get("name").toLocaleLowerCase() ===
+          coffee.name.toLocaleLowerCase()
+        ) {
           console.log(formdata.get("name"));
           const div = document.createElement("div");
+          div.className="coffeeList"
+          div.textContent = `${coffee.name}:${coffee.caffein}: ${coffee.flavor}`;
+          coffeeType.append(div);
+        } else if (
+          formdata.get("flavor").toLocaleLowerCase() === coffee.flavor.toLocaleLowerCase()) {
+          const div = document.createElement("div");
+          div.className="coffeeList"
           div.textContent = `${coffee.name}:${coffee.caffein}: ${coffee.flavor}`;
           coffeeType.append(div);
         }
 
-        if (formdata.get("flavor").toLocaleLowerCase() === coffee.flavor.toLocaleLowerCase()) {
-          console.log(formdata.get("flavor"));
-          const div = document.createElement("div");
-          div.textContent = `${coffee.name}:${coffee.caffein}: ${coffee.flavor}`;
-          coffeeType.append(div);
-        }
-       
         // alert("please provide search criteria")
-    
-      } 
-      
+      }
     });
 });
 
