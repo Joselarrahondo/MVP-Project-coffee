@@ -14,6 +14,7 @@ app.use(express.static("./client"));
 
 
 app.get("/api/coffee", (req, res) => {
+    console.log(req.query)
     sql`SELECT * FROM coffee`.then((result) => {
         console.log(result)
         res.json(result);
@@ -21,7 +22,7 @@ app.get("/api/coffee", (req, res) => {
 });
 app.get("/api/coffee/:id", (req, res) => {
     const id = req.params.id;
-    sql`SELECT * FROM coffee WHERE id = ${id}`.then((result) => {
+    sql`SELECT * FROM coffee WHERE id = ${id}` .then((result) => {
         if(result.length === 0){
             res.set("Content-type", "text/plain");
             res.status(404);

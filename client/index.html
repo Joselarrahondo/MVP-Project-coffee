@@ -6,19 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Getting Started</h1>
-    <div Class="coffee-types">
+    <div class="navbar">
+    <h2> Shopping Coffee</h2>
+    <div class="cart">
+        <i class="bi bi-basket"></i>
+    <div class="cartAmount">0</div>
+</div>
+</div>
+<div class="shop" id="shop">
+    <div class="item">
+
+    </div>
+</div>
+
+<div Class="coffee-types">
       <form class="coffee-list">
         <label for="name">NAME</label>
         <input type="text" id="name" name="name" />
         <label for="caffein">CAFFEIN-LEVEL</label>
-        <input type="text" id="caffien" name="caffein" />
+        <input type="text" id="caffein" name="caffein" />
         <label for="flavor">FLAVOR</label>
         <input type="text" id="flavor" name="flavor" />
-        <button type="submit"> Creat-List</button>
+        <button type="search"> SEARCH</button>
       </form>  
-    </div>
+   
 </body>
 </html>
