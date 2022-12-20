@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
@@ -15,7 +16,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     background-color: black;
-    color: white;
+    color: orangered;
     padding: 25px 60px;
 }
 .cart{
@@ -31,24 +32,41 @@ body {
 
 .cartAmount{
     position:absolute;
-    top:-15px;
-    right:-3px;
-    font-size: 25px;
+    top:-5px;
+    right:-4px;
+    font-size: 20px;
     background-color: red;
     color:white;
-    border-radius:3px;
+    border-radius:2px;
     padding: 3px;
 
 }
 
 .coffee-types {
     padding: 30px;
+    font:bold; 
+    justify-content: center;
 }
 
-.coffeeList{
-    color: red;
-    border-color: black;
+.coffeesearch{
+    margin-top: 10px;
+   display: flex;
+    color: black;
+    border: double 25px black;
     padding: 25px;
- 
-  
+    font-size: 20 px;
+    word-spacing: 15px;
+    white-space:pre;
+    justify-content: center;
+}   
+
+.cartadd{
+    display: flex;
+   background-color:bisque;
+   color: rgb(152, 8, 8);
+    text-align: center;
+    font-size: 15px;
+    padding: 1px 1px;
+    gap: 15px;
+    
 }
