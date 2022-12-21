@@ -1,4 +1,16 @@
 const coffeeType = document.querySelector(".coffee-types");
+const cartAmount = document.querySelector(".cartAmount")
+console.log(cartAmount)
+
+let count = 1
+coffeeType.addEventListener("click", (event)=>{
+   const target = event.target.closest(".cartadd")
+   if(target){
+        cartAmount.innerHTML = count
+        count++
+        console.log(cartAmount.innertext)
+    }
+});
 
 const coffeeList = document.querySelector(".coffee-list");
 coffeeList.addEventListener("submit", (event) => {
@@ -9,6 +21,7 @@ coffeeList.addEventListener("submit", (event) => {
     .then((res) => res.json())
     .then((coffies) => {
       for (let coffee of coffies) {
+      
         if (
             formdata.get("caffein").toLocaleLowerCase() === coffee.caffein.toLocaleLowerCase()) {
             const div = document.createElement("div");
@@ -20,6 +33,7 @@ coffeeList.addEventListener("submit", (event) => {
             button.textContent = "add to cart"
             div.append(button)
             coffeeType.append(div);
+       
         } else if (
 
             formdata.get("name").toLocaleLowerCase() === coffee.name.toLocaleLowerCase()) {
@@ -32,6 +46,7 @@ coffeeList.addEventListener("submit", (event) => {
             button.textContent = "add to cart"
             div.append(button)
             coffeeType.append(div);
+       
         } else if (
             
             formdata.get("flavor").toLocaleLowerCase() === coffee.flavor.toLocaleLowerCase()) {

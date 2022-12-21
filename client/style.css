@@ -11,7 +11,7 @@ body {
 }
 
 
-.navbar{
+.navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,15 +19,14 @@ body {
     color: orangered;
     padding: 25px 60px;
 }
-.cart{
+
+.cart {
     position: relative;
     background-color: white;
     color:black;
     padding: 5px;
     font-size: 45px;
     border-radius: 6px;
-
-
 }
 
 .cartAmount{
@@ -60,13 +59,11 @@ body {
     justify-content: center;
 }   
 
-.cartadd{
-    display: flex;
+.cartadd {
    background-color:bisque;
    color: rgb(152, 8, 8);
     text-align: center;
     font-size: 15px;
     padding: 1px 1px;
-    gap: 15px;
-    
+    margin: 5px 5px 9px 5px;
 }
