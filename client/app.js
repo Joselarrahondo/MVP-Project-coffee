@@ -1,5 +1,6 @@
 const coffeeType = document.querySelector(".coffee-types");
 const cartAmount = document.querySelector(".cartAmount")
+const coffeeSearch = document.querySelector(".coffesearch")
 console.log(cartAmount)
 
 let count = 1
@@ -11,17 +12,20 @@ coffeeType.addEventListener("click", (event)=>{
         console.log(cartAmount.innertext)
     }
 });
-
+const searchClear = document.createElement("div")
+searchClear.id = "test"
 const coffeeList = document.querySelector(".coffee-list");
 coffeeList.addEventListener("submit", (event) => {
   event.preventDefault();
-  const formdata = new FormData(event.target);
+ searchClear.innerHTML=""
+const formdata = new FormData(event.target);
   console.log(formdata.entries());
   fetch("/api/coffee")
     .then((res) => res.json())
     .then((coffies) => {
+        coffeeType.append(searchClear);
       for (let coffee of coffies) {
-      
+    
         if (
             formdata.get("caffein").toLocaleLowerCase() === coffee.caffein.toLocaleLowerCase()) {
             const div = document.createElement("div");
@@ -32,7 +36,7 @@ coffeeList.addEventListener("submit", (event) => {
             button.type = "submit"
             button.textContent = "add to cart"
             div.append(button)
-            coffeeType.append(div);
+            searchClear.append(div);
        
         } else if (
 
@@ -45,7 +49,7 @@ coffeeList.addEventListener("submit", (event) => {
             button.type = "submit"
             button.textContent = "add to cart"
             div.append(button)
-            coffeeType.append(div);
+            searchClear.append(div);
        
         } else if (
             
@@ -58,7 +62,7 @@ coffeeList.addEventListener("submit", (event) => {
             button.type = "submit"
             button.textContent = "add to cart"
             div.append(button)
-            coffeeType.append(div);
+            searchClear.append(div);
         }
       }
     });
